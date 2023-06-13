@@ -14,3 +14,13 @@ def home_page(request):
                   context={'Author' : Author,
                            'Gener' : Gener
                         }) 
+
+def login(request):
+    return render(request, 
+                  template_name="login.html", 
+                  context={}) 
+
+def registration(request):
+    return render(request, 
+                  template_name="registration.html", 
+                  context={}) 
