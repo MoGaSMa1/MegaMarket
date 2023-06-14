@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +24,10 @@
             position: fixed;
             background: rgba(0, 0, 0, 5);
             box-sizing: border-box;
-            box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+            box-shadow: 0 5px 25px rgba(87, 184, 63, 0.6);
             border-radius: 0 0 5px;
             color: #fff;
         }
-
         
 
         .main {
@@ -43,38 +43,60 @@
         }
 
         .home {
-            float: left;
-            width: auto;
             height:100%;
-            position: relative;
             padding: 0 10px 0 10px;
+            display: inline-block;
         }
 
         .list {
-            float: left;
-            width:auto;
             height:100%;
-            position: relative;
+            padding: 0 10px 0 10px;
+            display: inline-block;
         }
 
-        .up h2 {
+        .user {
+            height:100%;
+            padding: 0 10px 0 10px;
+            /* display: none; */
+            float: right;
+        }
+
+        .up a {
+            text-decoration: none;
+            color: #fff;
+        }
+        /* .up h2 {
             margin: 0;
             padding: 0;
             position: absolute;
-            top: 50%;transform: translate(0, -50%);
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
 
-        }
+        } */
     </style>
 </head>
 <body>
     <div class="up">
-        <div class="logo"></div>
+        <div class="logo">
+            <img class="logo" src="{% static 'IMG/book.png' %}" alt="logo">
+        </div>
         <div class="home">
             <h2>Home</h2>
         </div>
         <div class="list">
             <h2>List</h2>
         </div>
+        {% if user.is_authenticated %}
+            <div class="user">
+                <a href="{% url 'logout' %}"><h2>Logged</h2> </a>
+            </div>
+        {% else %}
+            <div class="user">
+            <a href="{% url 'login' %}" class="button"><h2>Log in</h2> </a>
+            </div>
+        {% endif %}
+        
     </div>
     <div class="main"></div>
 </body>
