@@ -22,6 +22,7 @@ from database import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home_page),
+    path('create/', views.create),
     path('login/', views.login),
     path('registration/', views.registration),
     path("accounts/", include("django.contrib.auth.urls")),

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from . import models
 from .forms import UserRegisterForm
@@ -13,12 +13,24 @@ def home_page(request):
                   context={
                         }) 
 
+def create(request):
+    if request.method == "POST":
+        author = models.Author()
+        author.Author = request.POST.get("author")
+        author.save()
+    return render(request, 
+                  template_name="create.html", 
+                  context={
+                        }) 
+
 def login(request):
     return render(request, 
                   template_name="login.html", 
                   context={}) 
 
 def registration(request):
+    print(request.POST.get("username"))
+
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -29,5 +41,5 @@ def registration(request):
     else:
         form = UserRegisterForm()
         return render(request, 
-                    template_name="registration.html", 
+                    template_name="registration/registration.html", 
                     context={'form': form}) 
