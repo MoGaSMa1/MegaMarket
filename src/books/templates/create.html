@@ -1,0 +1,15 @@
+{% extends "home_page.html" %}
+{% load static %}
+{% block title %}
+    Your shopping cart
+{% endblock %}
+{% block content %}
+    <div class="main-create-models">
+        <h2>Create</h2>
+        <p><a href="{% url 'author_create' %}">Author</a></p>
+        <p><a href="{% url 'gener_create' %}">Gener</a></p>
+        <p><a href="{% url 'publish_create' %}">Publish</a></p>
+        <p><a href="{% url 'series_create' %}">Series</a></p>
+        <p><a href="{% url 'book_create' %}">Book</a></p>
+    </div>
+{% endblock %}

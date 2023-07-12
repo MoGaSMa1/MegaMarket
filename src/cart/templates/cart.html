@@ -1,0 +1,53 @@
+{% extends "home_page.html" %}
+{% load static %}
+{% block title %}
+    Your shopping cart
+{% endblock %}
+{% block content %}
+    <div class="main-cart">
+        <h1>Your shopping cart</h1>
+        <table class="cart">
+            <thead>
+            <tr>
+                <th>Image</th>
+                <th>Book</th>
+                <th>Quantity</th>
+                <th>Unit price</th>
+                <th>Price</th>
+                <th>Remove</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in cart %}
+                {% with book=item.book %}
+                    <tr>
+                        <td>
+                            <a href="">
+                                <img src="
+                                    {% if book.img %}
+                                        {{ book.img.url }}
+                                    {% else %}
+                                        {% static "img/no_image.png" %}
+                                    {% endif %}" width="189" height="255">
+                            </a>
+                        </td>
+                        <td><h3>{{ book.name }}</h3></td>
+                        <td><h3>{{ item.quantity }}</h3></td>
+                        <td class="num"><h3>{{ item.price }} $</h3></td>
+                        <td class="num"><h3>{{ item.total_price }} $</h3></td>
+                        <td><a href="{% url 'cart_remove' pk=book.pk %}"><h3>Remove</h3></a></td>
+                    </tr>
+                {% endwith %}
+            {% endfor %}
+            <tr class="total">
+                <td colspan="5"><h3>Total</h3></td>
+                <td class="num"><h3>{{ cart.get_total_price }} $</h3></td>
+            </tr>
+            </tbody>
+        </table>
+        <p class="text-right">
+            <a href="{% url 'home_page' %}" class="button">Continue shopping</a>
+            <a href="{% url 'order_create' %}" class="button">Order</a>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,574 @@
+html{
+    height: 100%;
+
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(#141e30, #123504);
+    /* background-color: #123504; */
+}
+
+.up {
+    width: 100%;
+    height: 70px;
+    top: 0;
+    position: fixed;
+    background: rgba(0, 0, 0, 5);
+    box-sizing: border-box;
+    box-shadow: 0 5px 25px rgba(87, 184, 63, 0.6);
+    border-radius: 0 0 5px;
+    color: #fff;
+}
+
+
+.logo {
+    float: left;
+    width: 70px;
+    height: 100%;
+
+}
+
+.home {
+    height:100%;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+}
+
+.list {
+    height:100%;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+}
+
+.create {
+    height:100%;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+}
+
+.user {
+    height:100%;
+    padding: 0 10px 0 10px;
+    /* display: none; */
+    float: right;
+}
+
+.up a {
+    text-decoration: none;
+    color: #fff;
+}
+/* .up h2 {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+} */
+
+.main {
+    width: 1400px;
+    position: absolute;
+    top: 10%;
+    left: 8%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: rgba(87, 184, 63, 0.6);
+    box-shadow: 0 0px 50px rgba(87, 184, 63, 0.6);
+}
+
+.content {
+    display: flex;
+    height: auto;
+    margin: 0 -1px;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+.sidebar {
+    width: 200px;
+    height: auto;
+    margin: 0 1px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.sidebar > div {
+    padding: 0 10px;
+    height: 100%;
+    
+  }
+
+.book-list {
+    width: auto;
+    display: flex;
+    align-self: flex-start;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin: 0 1px;
+    background-color: black;
+    padding: 0;
+    border-radius: 10px;
+}
+
+.book-list h1 {
+    width: 100%;
+    padding-left: 40px;
+}
+
+.item {
+    height: 100%;
+    width:calc(100%/4);
+    background-color: #123504;
+    border-radius: 10px;
+}
+
+.item div {
+    background-color: #123504;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.item:nth-child(4n+2) div{
+    border-left: 2px solid black;
+}
+
+/* .item img {
+    margin: 0px;
+    align-content:center;
+    text-decoration: none;
+} */
+
+.item a {
+    text-decoration: none;
+}
+
+.item p, h3 {
+    color:rgba(87, 184, 63, 0.6);
+    margin: 0px;
+    text-align: center;
+    padding: 5px;
+}
+
+ /* Свечение */
+.item div {
+    /* color: #fff;
+    margin-top: 40px;
+    margin-bottom: 0px; */
+    transition: .4s;
+}
+
+.item div:hover{
+    color: #4ab950;
+    border: 1px solid #4ab950;
+}
+/*  */
+
+.main_book_detail {
+    width: 500px;
+    position: absolute;
+    top: 20%;
+    left: 37%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: black;
+    box-shadow: 0 0px 50px rgba(87, 184, 63, 0.6);
+    padding: 10px;
+}
+.main_book_detail > div{
+    height: 500px;
+    width: auto;
+}
+.main_book_detail .left {
+    width: 200px;
+    padding: 20px;
+    float: left;
+}
+
+.main_book_detail .right {
+    width: 220px;
+    padding: 20px;
+    float: right;
+}
+
+.main_book_detail .right h3{
+    text-align: left;
+}
+
+
+
+.main_book_detail img {
+    box-shadow: 0 0px 10px rgba(87, 184, 63, 0.6);
+    margin: 10px;
+    background-color:#141e30;
+}
+
+.main_book_detail h2, h3 {
+    color:#fff;
+    margin: 0px;
+    text-align: left;
+    padding: 5px;
+    text-align: center;
+}
+
+.main_book_detail label {
+    color:#fff;
+    margin: 0px;
+    text-align: left;
+    padding: 5px;
+    font-size: 30px;
+}
+
+.main_book_detail select {
+    padding: 2px;
+    font-size: 20px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background-color: black;
+    color: #fff;
+    width: 100px;
+    transition: .5s;
+}
+.main_book_detail select:hover {
+    color: #4ab950;
+    border: 1px solid #4ab950;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4ab950,
+                0 0 25px #4ab950,
+                0 0 50px #4ab950,
+                0 0 100px #4ab950;
+}
+
+.main_book_detail form {
+    height: 38px;
+    padding: 20px;
+}
+
+
+.main_book_detail form input{
+    position:relative;
+    padding: 10px 20px;
+    color: #4ab950;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    float: right;
+}
+
+.main_book_detail input:hover{
+    background: #4ab950;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4ab950,
+                0 0 25px #4ab950,
+                0 0 50px #4ab950,
+                0 0 100px #4ab950;
+}
+
+.main-cart {
+    width: 1400px;
+    position: absolute;
+    top: 10%;
+    left: 7%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: black;
+    box-shadow: 0 0px 50px rgba(87, 184, 63, 0.6);
+    padding: 20px;
+}
+
+.main-cart h1 {
+    color: #fff;
+    margin-top: 0;
+}
+  
+.cart {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #4ab950;
+    text-align: center;
+}
+  
+.cart thead th {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #4ab950;
+}
+  
+
+.cart tbody td {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    border: 1px solid #4ab950;
+}
+  
+
+.cart tbody td a {
+    text-decoration: none;
+}
+
+.cart tbody td h3 {
+    color: #fff;
+    text-decoration: none;
+}
+  
+.cart tbody .total td:first-child h3{
+    text-align: left;
+}
+  
+  
+.cart tbody td:first-child img {
+    display: block;
+    max-width: 189px;
+    max-height: 255px;
+    margin: 0 auto;
+    background-color:#141e30;
+}
+
+
+
+.text-right {
+    text-align: center;
+    padding: 20px 20px 40px 0px;
+}
+  
+
+.text-right a{
+    position:relative;
+    padding: 10px 20px;
+    margin-left: 20px;
+    color: #4ab950;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    float: right;
+}
+
+.text-right a:hover{
+    background: #4ab950;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4ab950,
+                0 0 25px #4ab950,
+                0 0 50px #4ab950,
+                0 0 100px #4ab950;
+}
+
+/* Стили для класса .main-order */
+.main-order {
+    width: 620px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    border-radius: 10px;
+    color: #fff;
+    background-color: black;
+    box-shadow: 0 0px 50px rgba(87, 184, 63, 0.6);
+    padding: 20px;
+}
+  
+
+h1 {
+    color: #fff;
+    text-align: center;
+}
+  
+
+.order-info{
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.user-info {
+    float: right;
+    vertical-align: top;
+    padding: 20px;
+}
+
+.order-info {
+    font-size: 20px;
+
+}
+  
+
+.order-info h3 {
+    color: rgba(87, 184, 63, 0.6);
+}
+  
+
+.order-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.order-info li {
+    margin-bottom: 10px;
+    color: #333;
+}
+  
+.order-info li span {
+    color: rgba(87, 184, 63, 0.6);
+    margin-left: 10px;
+}
+
+.user-info .order-form input[type="submit"]{
+    position:relative;
+    padding: 10px 20px;
+    color: #4ab950;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+    float: right;
+}
+
+.user-info .order-form input[type="submit"]:hover{
+    background: #4ab950;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4ab950,
+                0 0 25px #4ab950,
+                0 0 50px #4ab950,
+                0 0 100px #4ab950;
+}
+
+.user-info input{
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: rgba(0, 0, 0, .6);
+}
+
+.user-info label{
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.user-info input:focus ~
+label,
+.user-info input:valid ~
+label{
+
+    top: -20px;
+    left: 0;
+    color: #4ab950;
+    font-size: 12px;
+}
+
+.main-created {
+    width: 600px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 100px;
+    color: #fff;
+    background-color: black;
+    box-shadow: 0 0px 50px rgba(87, 184, 63, 0.6);
+    padding: 20px;
+}
+
+
+.main-created h1 {
+    color: rgba(87, 184, 63, 0.6);
+  }
+  
+  /* Стили для абзаца p */
+.main-created p {
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+  
+  /* Стили для тега strong */
+.main-created strong {
+    color: rgba(87, 184, 63, 0.6);
+}
+
+.main-create-models {
+    width: 200px;
+    
+    margin: auto;
+    margin-top: 100px;
+    color: #fff;
+    background-color: black;
+    box-shadow: 0 0px 50px rgba(87, 184, 63, 0.6);
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    border-radius: 10px;
+}
+
+.main-create-models h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.main-create-models p {
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+.main-create-models a{
+    position:relative;
+    padding: 10px 20px;
+    margin: auto;
+    color: #4ab950;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 4px;
+    background: rgba(0, 0, 0, .6);
+    border: none;
+
+}
+
+.main-create-models a:hover{
+    background: #4ab950;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #4ab950,
+                0 0 25px #4ab950,
+                0 0 50px #4ab950,
+                0 0 100px #4ab950;
+}

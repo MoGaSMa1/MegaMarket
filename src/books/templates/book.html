@@ -1,0 +1,38 @@
+{% extends "home_page.html" %}
+{% load static %}
+{% block title %}
+    Your shopping cart
+{% endblock %}
+{% block content %}
+    <div class="main_book_detail">
+        <div>
+            <div class="left">    
+                <img src="{% if book.img %}{{ book.img.url }}{% else %}{% static "IMG/no_image.png" %}{% endif %}" width="189" height="255">
+                <h2>{{book.name}}</h2>
+                <h3>{{book.price}} $</h3>
+                <h3>{{available}}</h3>
+            </div>
+            <div class="right">
+                <h3>Author: {{book.author}}</h3>
+                <h3>Series: {{book.series}}</h3>
+                <h3>Gener: {{book.gener}}</h3>
+                <h3>Year: {{book.year}}</h3>
+                <h3>Pages: {{book.pages}}</h3>
+                <h3>Binding: {{book.binding}}</h3>
+                <h3>Formatt: {{book.formatt}}</h3>
+                <h3>ISBN: {{book.isbn}}</h3>
+                <h3>Weight: {{book.weight}}</h3>
+                <h3>Ager: {{book.ager}}</h3>
+                <h3>Publish: {{book.publish}}</h3>
+                <h3>Quantity: {{book.quantity}}</h3>
+                <h3>Rating: {{book.rating}}</h3>
+
+            </div>
+        </div>
+        <form action="{% url 'cart_add' pk=book.pk %}" method="post">
+            {{ cart_book_form }}
+            {% csrf_token %}
+            <input type="submit" value="Add to cart">
+        </form>
+    </div>
+{% endblock %}

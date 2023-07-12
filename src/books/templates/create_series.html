@@ -1,0 +1,27 @@
+{% extends "home_page.html" %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+    <div class="login-box">
+        <h2>Add Series</h2>
+        <form method="post">
+            {% csrf_token %}
+            <div class="user-box">
+                <input type="text" name="name">
+                <div class="user-box">
+                    <button type="submit">Create
+                        <span :nth-child></span>
+                        <span :nth-child></span>
+                        <span :nth-child></span>
+                        <span :nth-child></span>
+                    </button>
+                    <div class="right-back">
+                        <a href="{% url 'create' %}">Back</a>
+                    </div>
+                </div> 
+                
+            </div>
+        </form>
+    </div>
+{% endblock %}

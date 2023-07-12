@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'CSS/LOG/page_CSS.css'%}" type="text/css">
+    <link rel="stylesheet" href="{% static 'CSS/LOG/log_CSS.css'%}" type="text/css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="up">
+        <div class="logo">
+            <img class="logo" src="{% static 'IMG/book.png' %}" alt="logo">
+        </div>
+        <div class="home">
+            <a href="{% url 'home_page' %}"><h2>Home</h2></a>
+        </div>
+        {% if user.is_authenticated %}
+            <div class="create">
+                <a href="{% url 'create' %}"><h2>Create</h2></a>
+            </div>
+        {% else %}
+        {% endif %}
+        
+        {% if user.is_authenticated %}
+            <div class="user">
+                <a href="{% url 'logout' %}"><h2>Log out</h2> </a>
+            </div>
+        {% else %}
+            <div class="user">
+            <a href="{% url 'login' %}"><h2>Log in</h2> </a>
+            </div>
+        {% endif %}
+        
+    </div>
+    {% block content %}
+    <div class="main">
+        <!-- {% if messages %}
+			<div class="messages">
+			{% for message in messages %}
+                    <div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+                        {{ message }}
+                    </div>
+			{% endfor %}
+			</div>
+		{% endif %} -->
+        <div class="content">
+            
+                <div class="sidebar">
+                    <div>
+                        <h1>Categories</h1>
+                        <ul>
+
+                            {% for c in authors %}
+                                <li>
+                                    <a href="{{ c.get_absolute_url }}">{{ c }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="book-list">
+                    <h1>Books</h1>
+                    {% for book in books %}
+                        <div class="item">
+                            <a href="{% url 'book_detail' pk=book.pk %}">
+                                <div>
+                                    <p>
+                                        <img src="{% if book.img %}{{ book.img.url }}{% else %}{% static "IMG/no_image.png" %}{% endif %}" width="189" height="255">
+                                    </p>
+                                    <h3>{{ book.name }}</h3>
+                                    <p>{{ book.price }} $</p>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            
+        </div>
+        
+    </div>
+    {% endblock%}
+    <script>
+
+    </script>
+</body>
+</html>

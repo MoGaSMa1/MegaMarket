@@ -1,0 +1,83 @@
+{% extends "home_page.html" %}
+{% load static %}
+{% block title %}
+    Your shopping cart
+{% endblock %}
+{% block content %}
+    <div class="fix">
+        <div class="login-box">
+            <h2>Add book</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="user-box">
+                    <input type="text" name="name">
+                    <input type="file" accept="jpg" name="img">
+                    <input type="number" name="price">
+
+                    <select name="author">
+                        {% for author in authors %}
+                        <option value="{{ author.pk }}">{{ author.Author }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select name="series">
+                        {% for series in serieses %}
+                        <option value="{{ series.pk }}">{{ series.Series }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <select name="gener">
+                        {% for gener in geners %}
+                        <option value="{{ gener.pk }}">{{ gener.Gener }}</option>
+                        {% endfor %}
+                    </select>
+                        
+                    <input type="number" name="year">
+                    <input type="number" name="pages">
+
+                    <select name="binding">
+                        <option value="HARD">Hard</option>
+                        <option value="SOFT">Soft</option>
+                        <option value="INFO">No info</option>
+                    </select>
+
+                    <select name="formatt">
+                        <option value="SLARGE">Super large</option>
+                        <option value="LARGE">Large</option>
+                        <option value="MEDIUM">Medium</option>
+                        <option value="SMALL">Small</option>
+                        <option value="MIDGET">Midget</option>
+                        <option value="INFO">No info</option>
+                    </select>
+
+                    <input type="text" name="isbn">
+                    <input type="number" name="weight">
+                    <input type="number" name="ager">
+
+                    <select name="publish">
+                        {% for publish in publishs %}
+                        <option value="{{ publish.pk }}">{{ publish.Publish }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <input type="number" name="quantity">
+
+                    <select name="availability">
+                        <option value=True>Active</option>
+                        <option value=False>Nactive</option>
+                    </select>
+
+                    <input type="number" name="rating">
+                </div>
+                <div class="user-box">
+                    <button type="submit">Create
+                        <span :nth-child></span>
+                        <span :nth-child></span>
+                        <span :nth-child></span>
+                        <span :nth-child></span>
+                    </button>
+                </div> 
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "home_page.html" %}
+
+{% block title %}Thank you{% endblock %}
+
+{% block content %}
+    <div class="main-created">
+        <h1>Thank you</h1>
+        <p>Your order has been successfully completed. Your order number is
+            <strong>{{ order.id }}</strong>.
+        </p>
+    </div>
+{% endblock %}

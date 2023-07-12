@@ -30,6 +30,8 @@ DEBUG = local_settings.DEBUG
 
 ALLOWED_HOSTS = local_settings.ALLOWED_HOSTS
 
+# AUTH_USER_MODEL="MegaMarket.User"
+
 
 # Application definition
 
@@ -40,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_registration',
     'database',
+    'books',
+    'cart',
+    'orders',
 
 ]
 
@@ -110,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -126,6 +132,14 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "../static")
 ]
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, '../media/')
+
+MEDIAFILES_DIRS = [
+    os.path.join(BASE_DIR, "../media")
+]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -134,3 +148,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
+
+CART_SESSION_ID = 'cart'
